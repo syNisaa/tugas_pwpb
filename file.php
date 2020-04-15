@@ -35,6 +35,15 @@
             <td><input style="width: 200px" type="text" name="hr"></td>
         </tr>
         <tr>
+            <td>Satuan</td>
+            <td><select name="satuan" >
+                <option>Pilih</option>
+                <option value="Satuan">Satuan</option>
+                <option value="Lusinan">Lusinan</option>
+                <option value="pcs">Pcs</option>
+            </select></td>
+        </tr>
+        <tr>
             <td>tanggal Beli</td>
             <td><input style="width: 200px" type="date" name="tgl"></td>
         </tr>
@@ -48,6 +57,7 @@
         <br><hr><br>
 
 <?php
+
 require 'koneksi.php';
 
 $query = $dbh->query('SELECT * FROM `barang`');
@@ -61,6 +71,7 @@ $query = $dbh->query('SELECT * FROM `barang`');
       <th scope="col">Nama barang</th>
       <th scope="col">Jumlah Barang</th>
       <th scope="col">Harga Barang</th>
+      <th scope="col">Satuan Barang</th>
       <th scope="col">Tanggal Beli</th>
       <th>Modify</th>
     </tr>
@@ -76,6 +87,7 @@ $query = $dbh->query('SELECT * FROM `barang`');
             <td><?php echo $data_siswa['nama_barang'];?></td>
             <td><?php echo $data_siswa['jumlah_barang'];?></td>
             <td><?php echo $data_siswa['harga_barang'];?></td>
+            <td><?php echo $data_siswa['satuan'];?></td>
             <td><?php echo $data_siswa['tgl_beli'];?></td>
             <td><a href="delete.php?id=<?php echo $data_siswa['id']; ?>">Hapus</a> 
           
